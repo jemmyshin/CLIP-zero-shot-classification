@@ -1,8 +1,5 @@
 from docarray import Document, DocumentArray
-import imagehash
-from PIL import Image
 import numpy as np
-import os
 
 
 def get_label_embedding(label_da: DocumentArray, client):
