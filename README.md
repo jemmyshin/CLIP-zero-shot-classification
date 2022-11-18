@@ -12,7 +12,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-### 3. Upload your imagei and search
+### 3. Upload your image and search
 Choose the image to upload and click `search`.
 
 
