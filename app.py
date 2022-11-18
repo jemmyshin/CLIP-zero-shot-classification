@@ -5,8 +5,6 @@ from docarray import DocumentArray, Document
 from clip_client import Client
 
 
-os.environ['JINA_AUTH_TOKEN'] = '31454a8d0823445012c6de5623aed215'
-
 def embed_tags():
     tags = []
     cur_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
