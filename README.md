@@ -16,4 +16,4 @@ streamlit run app.py
 Choose the image to upload and click `search`.
 
 
-Notice: `tags` file lists all labels we support for classification.
+Notice: `tags` file lists all labels we support for classification. (labels are from CIFAR100)
