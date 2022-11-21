@@ -1,9 +1,11 @@
 import streamlit as st
 from helper import get_label_embedding, classify
 import os
+import pandas as pd
 from docarray import DocumentArray, Document
 from clip_client import Client
 
+os.environ['JINA_AUTH_TOKEN'] = '31454a8d0823445012c6de5623aed215'
 
 def embed_tags():
     tags = []
@@ -19,7 +21,13 @@ def embed_tags():
 def search():
     with st.spinner(f"Processing..."):
         results = classify(img, st.session_state.labels, int(topn_value), client)
-        st.text(f"Output: {results}")
+        results = [[results[0][i], results[1][i]] for i in range(len(results[0]))]
+        st.text(f"Output label: {results[0][0]}, score: {results[0][1]}")
+        st.text("top k results: ")
+        df = pd.DataFrame(
+                    results,
+                    columns=('label', 'score'))
+        st.dataframe(df)
     st.success('Done!')
 
 st.set_page_config(page_title='CLIP zero-shot classification', page_icon='🔍')
