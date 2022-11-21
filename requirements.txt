@@ -1,4 +1,4 @@
-clip_client==0.4.20
-docarray==0.13.23
-numpy==1.22.4
-streamlit==1.11.1
+clip_client==0.8.0
+docarray==0.17.1
+numpy
+streamlit
