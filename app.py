@@ -5,7 +5,6 @@ import pandas as pd
 from docarray import DocumentArray, Document
 from clip_client import Client
 
-os.environ['JINA_AUTH_TOKEN'] = '31454a8d0823445012c6de5623aed215'
 
 def embed_tags():
     tags = []
@@ -36,9 +35,10 @@ st.title('CLIP zero-shot classification')
 uploaded_file = st.file_uploader('Choose an image')
 topn_value = st.text_input('Top N', '5')
 cas_url = st.text_input('CLIP-as-service Server', 'grpcs://api.clip.jina.ai:2096')
+token = st.text_input('token', '')
 search_button = st.button('Search')
 
-client = Client(cas_url, credential={'Authorization': os.getenv('JINA_AUTH_TOKEN')})
+client = Client(cas_url, credential={'Authorization': token})
 
 if uploaded_file:
     img = uploaded_file.getvalue()
