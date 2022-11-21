@@ -1,4 +1,4 @@
 clip_client==0.8.0
-docarray==0.17.1
+docarray
 numpy
 streamlit
